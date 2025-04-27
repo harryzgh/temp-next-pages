@@ -1,0 +1,16 @@
+$primary-color: #64ff00;
+.header{
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  .headerLeft{
+    display: flex;
+  }
+  .headerRight{
+    display: flex;
+  }
+}
+
+:export {
+  primaryColor: $primary-color;
+}
