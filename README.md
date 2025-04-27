@@ -1,8 +1,11 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# 版本相关 [Next.js](https://nextjscn.org/docs/pages/getting-started/installation)
 
-## Getting Started
+1. 使用 `create-next-app`框架安装
+2. next 版本 15.3.0
 
-First, run the development server:
+## 项目启动
+
+项目安装好后，使用以下命令进行启动
 
 ```bash
 npm run dev
@@ -14,27 +17,18 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 集成的功能点
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+1. [X] 使用 `create-next-app`框架安装项目
+2. [X] 引入Tailwindcss （避免与sass使用混乱，屏蔽)
+3. [X] 引入多种功能中间件使用方式
+4. [X] 引入typescript
+5. [X] 引入sass使用
+6. [X] 引入国际化
+7. [ ] 路由切换实现
+8. [ ] api 请求封装
+9. [ ] 切换背景色
+1. [ ] 引入websocket
+1. [ ] 引入sentry (埋点和监测线上问题和性能)
+1. [ ] 引入tradingview
+1. [ ] 引入简单版k线
