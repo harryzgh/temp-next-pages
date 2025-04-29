@@ -10,6 +10,6 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const parsed = schema.parse(req.body)
-  console.log("res", res, parsed)
+  console.log("res++++++++++++++++", res, parsed)
   // ...
 }
