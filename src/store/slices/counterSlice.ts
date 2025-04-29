@@ -43,7 +43,8 @@ export const counterSlice = createSlice({
     },
     changePerson: (state, action: PayloadAction<PersonType>) => {
       const newPerson = action.payload
-      // 如果传入的对象跟之前对象内容完全一致，则不给state对象赋值，减少不必要的页面刷新
+      // 如果传入的对象跟之前对象内容完全一致，则不给state对象赋值，减少不必要的赋值操作及页面刷新
+      //
       if (!isDeepEqual(state.person, action.payload)) {
         state.person = newPerson
       }
