@@ -35,7 +35,7 @@ const AboutPage: NextPageWithLayout = () => {
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    setIsLoading(true)
+    // setIsLoading(true)
     setError(null) // 当新请求开始时清除之前的错误
 
     // 1. 定义 Schema
@@ -94,6 +94,7 @@ const AboutPage: NextPageWithLayout = () => {
         <meta name="description" content="about页貌似还没啥内容"></meta>
         <meta name="keywords" content="这真的是about页"></meta>
       </Head>
+      <div></div>
       {/* 表单验证开始 */}
       {error && <div style={{ color: "red" }}>{error}</div>}
       <form onSubmit={onSubmit}>

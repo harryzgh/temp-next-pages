@@ -6,6 +6,7 @@
 2. next 版本 15.3.0
 3. react 版本 19.0.0
 4. typescript 版本 5.8.3
+5. "react-redux": "^9.2.0" && "@reduxjs/toolkit": "^2.7.0" && "next-redux-wrapper": "^8.1.0"
 
 ## 项目启动
 
@@ -28,11 +29,12 @@ bun dev
 4. [x] 引入 typescript
 5. [x] 引入 sass 使用
 6. [x] 引入国际化
-7. [ ] 路由切换实现
-8. [ ] 全局状态管理
-9. [ ] api 请求封装
-10. [ ] 切换背景色
-11. [ ] 引入 websocket
-12. [ ] 引入 sentry (埋点和监测线上问题和性能)
-13. [ ] 引入 tradingview
-14. [ ] 引入简单版 k 线
+7. [x] 路由切换实现（router 实现)
+8. [x] 表单验证实现
+9. [x] 全局状态管理
+10. [ ] api 请求封装
+11. [ ] 切换背景色
+12. [ ] 引入 websocket
+13. [ ] 引入 sentry (埋点和监测线上问题和性能)
+14. [ ] 引入 tradingview
+15. [ ] 引入简单版 k 线
