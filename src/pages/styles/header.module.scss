@@ -1,12 +1,13 @@
 $primary-color: #64ff00;
-.header{
+.header {
   padding: 0 24px;
   display: flex;
   justify-content: space-between;
-  .headerLeft{
+  border: solid 1px #ccc;
+  .headerLeft {
     display: flex;
   }
-  .headerRight{
+  .headerRight {
     display: flex;
   }
 }

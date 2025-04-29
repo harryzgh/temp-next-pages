@@ -1,7 +1,11 @@
-# 版本相关 [Next.js](https://nextjscn.org/docs/pages/getting-started/installation)
+## [Next.js](https://nextjscn.org/docs/pages/getting-started/installation)
 
-1. 使用 `create-next-app`框架安装
+## 版本相关
+
+1. 安装 npx `create-next-app `...
 2. next 版本 15.3.0
+3. react 版本 19.0.0
+4. typescript 版本 5.8.3
 
 ## 项目启动
 
@@ -19,16 +23,16 @@ bun dev
 
 ## 集成的功能点
 
-1. [X] 使用 `create-next-app`框架安装项目
-2. [X] 引入Tailwindcss （避免与sass使用混乱，屏蔽)
-3. [X] 引入多种功能中间件使用方式
-4. [X] 引入typescript
-5. [X] 引入sass使用
-6. [X] 引入国际化
+2. [x] 引入 Tailwindcss （避免与 sass 使用混乱，屏蔽)
+3. [x] 引入多种功能中间件使用方式
+4. [x] 引入 typescript
+5. [x] 引入 sass 使用
+6. [x] 引入国际化
 7. [ ] 路由切换实现
-8. [ ] api 请求封装
-9. [ ] 切换背景色
-1. [ ] 引入websocket
-1. [ ] 引入sentry (埋点和监测线上问题和性能)
-1. [ ] 引入tradingview
-1. [ ] 引入简单版k线
+8. [ ] 全局状态管理
+9. [ ] api 请求封装
+10. [ ] 切换背景色
+11. [ ] 引入 websocket
+12. [ ] 引入 sentry (埋点和监测线上问题和性能)
+13. [ ] 引入 tradingview
+14. [ ] 引入简单版 k 线
