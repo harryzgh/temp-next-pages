@@ -1,10 +1,9 @@
 import footerStyles from "../styles/footer.module.scss"
 import { useCountNum, usePerson } from "../../store/action/counterAction"
 
-export default function Foot() {
+export default function Footer() {
   const countNum = useCountNum()
   const person = usePerson()
-
   return (
     <footer className={footerStyles.footer}>
       <p>姓名： alsdj</p>

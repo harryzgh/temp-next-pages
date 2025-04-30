@@ -6,10 +6,10 @@ import { RootState, AppDispatch } from "../index"
 import { increment, decrement, changePerson } from "../slices/counterSlice"
 
 export function useCountNum() {
-  return useSelector((state: RootState) => state.counter.countNum)
+  return useSelector((state: RootState) => state.counterSlice.countNum)
 }
 export function usePerson() {
-  return useSelector((state: RootState) => state.counter.person)
+  return useSelector((state: RootState) => state.counterSlice.person)
 }
 
 export function useIncrementCountNum() {
