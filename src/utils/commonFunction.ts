@@ -13,7 +13,6 @@ export function isShallowEqual(
   const keys2 = Object.keys(obj2)
 
   if (keys1.length !== keys2.length) return false
-
   return keys1.every((key) => obj1[key] === obj2[key])
 }
 
@@ -30,27 +29,52 @@ export function isDeepEqual<T>(obj1: T, obj2: T): boolean {
   // 2. 处理null和undefined
   if (obj1 == null || obj2 == null) return obj1 === obj2
 
-  // 3. 处理特殊对象类型
-  if (obj1 instanceof Date && obj2 instanceof Date) {
-    return obj1.getTime() === obj2.getTime()
-  }
-  if (obj1 instanceof RegExp && obj2 instanceof RegExp) {
-    return obj1.toString() === obj2.toString()
-  }
-
-  // 4. 如果不是对象类型，直接比较
+  // 3. 如果不是对象类型，直接比较
   if (typeof obj1 !== "object" || typeof obj2 !== "object") {
     return false
   }
 
-  // 5. 获取对象的属性名集合
+  // 4. 特殊对象类型比较
+  // 比较 Date
+  if (obj1 instanceof Date && obj2 instanceof Date) {
+    return obj1.getTime() === obj2.getTime()
+  }
+  // 比较 RegExp
+  if (obj1 instanceof RegExp && obj2 instanceof RegExp) {
+    return obj1.toString() === obj2.toString()
+  }
+  // 比较 Map （WeakMap比较暂不实现）
+  if (obj1 instanceof Map && obj2 instanceof Map) {
+    if (obj1.size !== obj2.size) return false
+    for (const [key, value] of obj1) {
+      if (!obj2.has(key) || !isDeepEqual(value, obj2.get(key))) {
+        return false
+      }
+    }
+    return true
+  }
+  // 比较 Set
+  if (obj1 instanceof Set && obj2 instanceof Set) {
+    if (obj1.size !== obj2.size) return false
+    for (const item of obj1) {
+      let found = false
+      for (const otherItem of obj2) {
+        if (isDeepEqual(item, otherItem)) {
+          found = true
+          break
+        }
+      }
+      if (!found) return false
+    }
+    return true
+  }
+
+  // 5. 普通对象比较
   const keysA = Object.keys(obj1) as Array<keyof T>
   const keysB = Object.keys(obj2) as Array<keyof T>
   if (keysA.length !== keysB.length) {
     return false
   }
-
-  // 6. 递归比较每个属性
   return keysA.every((key) => {
     if (!Object.prototype.hasOwnProperty.call(obj2, key)) {
       return false

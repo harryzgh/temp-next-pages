@@ -23,8 +23,6 @@ const HomePage: NextPageWithLayout = () => {
   const router = useRouter()
   const countNum = useCountNum()
   const person = usePerson()
-  console.log("count++++++++", countNum)
-  console.log("person++++++++", person)
 
   return (
     <div className={indexStyle.ceshi}>
