@@ -10,6 +10,9 @@ $primary-color: #64ff00;
   .headerRight {
     display: flex;
   }
+  button {
+    color: green;
+  }
 }
 
 :export {
