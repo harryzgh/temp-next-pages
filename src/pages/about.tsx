@@ -12,6 +12,7 @@ import { useTranslations } from "next-intl"
 import Head from "next/head"
 import { useRouter } from "next/router"
 import { z } from "zod"
+import { DynamicHello } from "@/router/index"
 
 interface ErrorMsgType {
   nameError: ""
@@ -23,7 +24,7 @@ const AboutPage: NextPageWithLayout = () => {
   const t = useTranslations()
   const router = useRouter()
   const [isLoading, setIsLoading] = useState<boolean>(false)
-  const [error, setError] = useState<string | null>(null)
+  const [errorText, setError] = useState<string | null>(null)
   const [name, setName] = useState<string>("")
   const [age, setAge] = useState<number>()
   const [email, setEmail] = useState<string>("")
@@ -86,7 +87,7 @@ const AboutPage: NextPageWithLayout = () => {
       }
     }
   }
-  console.log("errorMsg++++", errorMsg)
+  console.log("errorMsg++++++++++++++++++++++++++++")
   return (
     <div>
       <Head>
@@ -94,9 +95,9 @@ const AboutPage: NextPageWithLayout = () => {
         <meta name="description" content="about页貌似还没啥内容"></meta>
         <meta name="keywords" content="这真的是about页"></meta>
       </Head>
-      <div></div>
+      <DynamicHello />
       {/* 表单验证开始 */}
-      {error && <div style={{ color: "red" }}>{error}</div>}
+      {errorText && <div style={{ color: "red" }}>{errorText}</div>}
       <form onSubmit={onSubmit}>
         <div>
           <label htmlFor="name">姓名：</label>

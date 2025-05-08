@@ -1,6 +1,5 @@
 import { ReactElement, useEffect } from "react"
-import Header from "./header"
-import Footer from "./footer"
+import { DynamicHeader, DynamicFooter } from "@/router/index"
 
 export default function Layout({ children }: { children: ReactElement }) {
   // const [data, setData] = useState(null)
@@ -28,9 +27,9 @@ export default function Layout({ children }: { children: ReactElement }) {
 
   return (
     <>
-      <Header />
+      <DynamicHeader />
       <main>{children}</main>
-      <Footer />
+      <DynamicFooter />
     </>
   )
 }

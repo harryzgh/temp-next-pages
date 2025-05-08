@@ -5,21 +5,26 @@
 import { configureStore } from "@reduxjs/toolkit"
 import { createWrapper } from "next-redux-wrapper"
 import counterSlice from "./slices/counterSlice"
+import themeSlice from "./slices/themeSlice"
+import { useDispatch } from "react-redux"
 
 const rootReducer = {
   counterSlice,
+  themeSlice,
 }
 
-export const makeStore = () =>
+export const store = () =>
   configureStore({
     reducer: rootReducer,
     devTools: process.env.NODE_ENV !== "production",
   })
 
-export type AppStore = ReturnType<typeof makeStore>
+export type AppStore = ReturnType<typeof store>
 export type RootState = ReturnType<AppStore["getState"]>
 export type AppDispatch = AppStore["dispatch"]
 
-export const wrapper = createWrapper<AppStore>(makeStore, {
+export const wrapper = createWrapper<AppStore>(store, {
   debug: process.env.NODE_ENV === "development",
 })
+
+export const useAppDispatch = () => useDispatch<AppDispatch>()

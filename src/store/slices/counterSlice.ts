@@ -15,7 +15,6 @@ interface CounterState {
   person: PersonType
 }
 
-// 页面中使用 useSelector 获取多层对象person，如果
 const initialState: CounterState = {
   countNum: 0,
   person: {

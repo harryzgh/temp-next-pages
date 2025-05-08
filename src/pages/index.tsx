@@ -10,19 +10,20 @@ import type { NextPageWithLayout } from "./_app"
 import { useTranslations } from "next-intl"
 import Head from "next/head"
 import { useRouter } from "next/router"
+import { useAppDispatch } from "@/store"
 import {
   useCountNum,
   usePerson,
-  useIncrementCountNum,
-  useDecrementCountNum,
-  useChangePerson,
-} from "../store/action/counterAction"
+  changePersonAction,
+} from "@/store/action/counterAction"
+import { increment, decrement } from "@/store/slices/counterSlice"
 
 const HomePage: NextPageWithLayout = () => {
   const t = useTranslations()
   const router = useRouter()
   const countNum = useCountNum()
   const person = usePerson()
+  const dispatch = useAppDispatch()
 
   return (
     <div className={indexStyle.ceshi}>
@@ -33,9 +34,9 @@ const HomePage: NextPageWithLayout = () => {
       </Head>
       <div>
         <h1>Count: {countNum}</h1>
-        <button onClick={useIncrementCountNum()}>Increment</button>
-        <button onClick={useDecrementCountNum()}>Decrement</button>
-        <button onClick={useChangePerson()}>更改人</button>
+        <button onClick={() => dispatch(increment())}>Increment</button>
+        <button onClick={() => dispatch(decrement())}>Decrement</button>
+        <button onClick={() => changePersonAction(dispatch)}>更改人</button>
       </div>
       <div>
         <p>person name: {person.name}</p>

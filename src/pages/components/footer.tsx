@@ -1,5 +1,5 @@
 import footerStyles from "../styles/footer.module.scss"
-import { useCountNum, usePerson } from "../../store/action/counterAction"
+import { useCountNum, usePerson } from "@/store/action/counterAction"
 
 export default function Footer() {
   const countNum = useCountNum()
