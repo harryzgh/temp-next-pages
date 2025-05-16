@@ -16,16 +16,20 @@ export default function Header() {
     // 初始化theme
     const savedTheme = localStorage.getItem(STORAGE_CONST.theme)
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
-    const theme =
-      (savedTheme === THEME.dark && THEME.dark) ||
-      (savedTheme === THEME.light && THEME.light) ||
-      (mediaQuery.matches ? THEME.dark : THEME.light)
-    dispatch(setTheme(theme))
-    // 设置浏览器背景主题更改监听器
-    const handler = (e: MediaQueryListEvent) =>
-      dispatch(setTheme(e.matches ? THEME.dark : THEME.light))
-    mediaQuery.addEventListener("change", handler)
-    return () => mediaQuery.removeEventListener("change", handler)
+    dispatch(
+      setTheme(
+        (savedTheme === THEME.dark && THEME.dark) ||
+          (savedTheme === THEME.light && THEME.light) ||
+          (mediaQuery.matches ? THEME.dark : THEME.light)
+      )
+    )
+    // 平台没设置主题时，设置浏览器背景主题更改监听器
+    if (!savedTheme) {
+      const handler = (e: MediaQueryListEvent) =>
+        dispatch(setTheme(e.matches ? THEME.dark : THEME.light))
+      mediaQuery.addEventListener("change", handler)
+      return () => mediaQuery.removeEventListener("change", handler)
+    }
   }, [dispatch])
 
   useEffect(() => {

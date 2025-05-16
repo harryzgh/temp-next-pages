@@ -9,8 +9,8 @@ body {
   --text: black;
   --primary: #2563eb;
 } */
+
 [data-theme="light"] {
-  /* 浅色主题 */
   --background: white;
   --text: black;
   --primary: #2563eb;
@@ -21,6 +21,15 @@ body {
   --background: #1a1a1a;
   --text: red;
   --primary: #3b82f6;
+}
+
+/* 深色色背景下样式, 避免页面刷新闪烁白背景主题 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1a1a;
+    --text: red;
+    --primary: #3b82f6;
+  }
 }
 
 body {

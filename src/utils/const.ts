@@ -4,6 +4,7 @@ export const STORAGE_CONST = {
 }
 
 export enum THEME {
+  none = "",
   dark = "dark",
   light = "light",
 }

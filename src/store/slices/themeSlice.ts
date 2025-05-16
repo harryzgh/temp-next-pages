@@ -2,7 +2,7 @@ import { THEME } from "@/utils/const"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 const initialState = {
-  theme: THEME.light,
+  theme: THEME.none,
 }
 
 export const themeSlice = createSlice({
